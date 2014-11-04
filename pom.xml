@@ -13,7 +13,7 @@
     <artifactId>apk-parser</artifactId>
     <name>apk-parser</name>
     <packaging>jar</packaging>
-    <version>1.4.7</version>
+    <version>1.4.7.daipatch</version>
     <url>https://github.com/xiaxiaocao/apk-parser</url>
     <developers>
         <developer>
