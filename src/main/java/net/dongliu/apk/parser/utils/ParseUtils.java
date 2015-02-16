@@ -334,12 +334,16 @@ public class ParseUtils {
                 continue;
             }
             ref = resource.key;
-            int level = Locales.match(locale, type.locale);
-            if (level == 2) {
-                result = resource.toStringValue(resourceTable, locale);
+            if("string".equals(typeSpec.name)) {
+                int level = Locales.match(locale, type.locale);
+                if (level == 2) {
+                    result = resource.toStringValue(resourceTable, locale);
+                    break;
+                } else if (level > currentLevel) {
+                    result = resource.toStringValue(resourceTable, locale);
+                }
+            } else {
                 break;
-            } else if (level > currentLevel) {
-                result = resource.toStringValue(resourceTable, locale);
             }
         }
         if (locale == null || result == null) {
