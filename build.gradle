@@ -43,7 +43,7 @@ uploadArchives {
         mavenDeployer {
             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-            repository(url: "http://repositories.dai-labor.de/nexus/content/repositories/thirdparty/") {
+            repository(url: project.properties['sonatypeUrl']) {
                 authentication(userName: project.properties['sonatypeUsername'], password: project.properties['sonatypePassword'])
             }
 
