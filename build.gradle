@@ -4,7 +4,7 @@ apply plugin: 'signing'
 
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
-group = 'net.dongliu'
+group = 'net.dongliu.patched'
 version = '1.7.5'
 
 repositories {
@@ -43,7 +43,7 @@ uploadArchives {
         mavenDeployer {
             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+            repository(url: "http://repositories.dai-labor.de/nexus/content/repositories/thirdparty/") {
                 authentication(userName: project.properties['sonatypeUsername'], password: project.properties['sonatypePassword'])
             }
 
